@@ -21,7 +21,7 @@ int main(void)
     {
         for (n = 0; n < pcm.length; n++)
         {
-            pcm.s[n] += 1.0 / i * sin(2.0 * M_PI * i * f0 / pcm.fs);
+            pcm.s[n] += 1.0 / i * sin(2.0 * M_PI * i * f0 * n/ pcm.fs);
         }
     }
 
@@ -29,7 +29,7 @@ int main(void)
 
     for (n = 0; n < pcm.length; n++)
     {
-        pcm.s[n] = gain;
+        pcm.s[n] *= gain;
     }
 
     wave_write_16bit_mono(&pcm, "ex3_1.wav");
