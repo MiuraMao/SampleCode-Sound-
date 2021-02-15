@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "wave.h"
-
+//Amplitude Envelope
 /*サイン波の重ね合わせ*/
 int main(void)
 {
