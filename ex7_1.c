@@ -4,6 +4,7 @@
 #include "wave.h"
 #include "iir_filter.h"
 
+//Frequency envelope
 int main(void)
 {
     MONO_PCM pcm0, pcm1;
