@@ -11,8 +11,8 @@ int main(void)
     int n, A, D, R, gate, duration;
     double *ac, fc, *am, fm, ratio, gain, S;
 
-    pcm.fs = 44100;     /*標本化周波数*/ 
-    pcm.bits = 16;      /*量子化精度*/
+    pcm.fs = 44100;             /*標本化周波数*/ 
+    pcm.bits = 16;              /*量子化精度*/
     pcm.length = pcm.fs * 4;    /*音データの長さ*/
     pcm.s = calloc(pcm.length, sizeof(double));     /*音データ*/
 
@@ -28,7 +28,7 @@ int main(void)
     R = pcm.fs * 4;
     ADSR(ac, A, D, S, R, gate, duration);
 
-    fc = 440.0;     /*キャリア周波数*/
+    fc = 440.0;         /*キャリア周波数*/
 
     /*モジュレータ振幅*/
     gate = pcm.fs * 4;
@@ -49,7 +49,7 @@ int main(void)
                  + am[n] * sin(2.0 * M_PI * fm * n / pcm.fs));
     }
 
-    gain = 0.1;     /*ゲイン*/
+    gain = 0.1;         /*ゲイン*/
 
     for (n = 0; n < pcm.length; n++)
     {
